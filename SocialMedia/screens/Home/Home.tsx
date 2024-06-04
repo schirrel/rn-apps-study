@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
 
 import {IUserPost, userPosts} from '../../data';
-import UserPost from '../UserPost/UserPost';
-import Header from '../Header/Header';
-import UserStories from '../UserStories/UserStories';
+import Header from '../../components/Header/Header';
+import UserStories from '../../components/UserStories/UserStories';
+import UserPost from '../../components/UserPost/UserPost';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import globalStyles from '../../Style';
 
-function UserPosts(): React.JSX.Element {
+function Home({navigation}: any): React.JSX.Element {
   const userPostsPageSize = 2;
   const [pageLoadCounter, setPageLoadCounter] = useState(1);
   const [userPostsRendered, setUserPostsRendered] = useState<IUserPost[]>([]);
@@ -51,35 +53,37 @@ function UserPosts(): React.JSX.Element {
   };
 
   return (
-    <FlatList
-      data={userPostsRendered}
-      showsVerticalScrollIndicator={false}
-      ListHeaderComponent={
-        <>
-          <Header />
-          <UserStories />
-        </>
-      }
-      onEndReachedThreshold={0.5}
-      onEndReached={() => {
-        loadMore();
-      }}
-      renderItem={({item}) => (
-        <UserPost
-          profileImage={item.profileImage}
-          key={item.id}
-          firstName={item.firstName}
-          id={item.id}
-          lastName={item.lastName}
-          comments={item.comments}
-          bookmarks={item.bookmarks}
-          likes={item.likes}
-          location={item.location}
-          image={item.image}
-        />
-      )}
-    />
+    <SafeAreaView style={globalStyles.lightBackground}>
+      <FlatList
+        data={userPostsRendered}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={
+          <>
+            <Header navigation={navigation} />
+            <UserStories />
+          </>
+        }
+        onEndReachedThreshold={0.5}
+        onEndReached={() => {
+          loadMore();
+        }}
+        renderItem={({item}) => (
+          <UserPost
+            profileImage={item.profileImage}
+            key={item.id}
+            firstName={item.firstName}
+            id={item.id}
+            lastName={item.lastName}
+            comments={item.comments}
+            bookmarks={item.bookmarks}
+            likes={item.likes}
+            location={item.location}
+            image={item.image}
+          />
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
-export default UserPosts;
+export default Home;

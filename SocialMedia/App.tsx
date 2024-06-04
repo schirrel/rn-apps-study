@@ -6,16 +6,14 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-import UserPosts from './components/UserPosts/UserPosts';
+import {NavigationContainer} from '@react-navigation/native';
+import MainNavigation from './navigation/MainNavigations';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <StatusBar backgroundColor={'red'} />
-      <UserPosts />
-    </SafeAreaView>
+    <NavigationContainer>
+      <MainNavigation />
+    </NavigationContainer>
   );
 }
-
 export default App;
