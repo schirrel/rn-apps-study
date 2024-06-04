@@ -1,15 +1,16 @@
 import {StyleSheet} from 'react-native';
 import {getFontFamily} from '../../helpers/font';
+import {scaleFontSize, verticalScale} from '../../helpers/scaling';
 
 const style = StyleSheet.create({
   userStoryWrapper: {
-    marginRight: 20,
+    marginRight: verticalScale(20),
   },
   firstName: {
     fontFamily: getFontFamily('Inter', '500'),
-    fontSize: 14,
+    fontSize: scaleFontSize(14),
     color: '#022150',
-    marginTop: 5,
+    marginTop: verticalScale(5),
     textAlign: 'center',
   },
 });

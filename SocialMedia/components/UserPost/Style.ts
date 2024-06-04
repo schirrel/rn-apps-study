@@ -1,16 +1,21 @@
 import {StyleSheet} from 'react-native';
 import {getFontFamily} from '../../helpers/font';
+import {
+  horizontalScale,
+  scaleFontSize,
+  verticalScale,
+} from '../../helpers/scaling';
 
 const style = StyleSheet.create({
   postWrapper: {
-    marginHorizontal: 28,
+    marginHorizontal: horizontalScale(28),
     flexDirection: 'row',
   },
   postContainer: {
-    marginTop: 35,
+    marginTop: verticalScale(35),
     borderBottomWidth: 1,
     borderBottomColor: '#EFF2F6',
-    paddingBottom: 20,
+    paddingBottom: verticalScale(20),
   },
   postUserContainer: {
     flexDirection: 'row',
@@ -19,27 +24,27 @@ const style = StyleSheet.create({
   },
   userInfo: {
     justifyContent: 'center',
-    marginLeft: 10,
+    marginLeft: horizontalScale(10),
     flex: 1,
   },
   userName: {
     color: '#000',
     fontFamily: getFontFamily('Inter', '600'),
-    fontSize: 16,
+    fontSize: scaleFontSize(16),
   },
   location: {
     color: '#79869F',
     fontFamily: getFontFamily('Inter', '400'),
-    fontSize: 12,
-    marginTop: 5,
+    fontSize: scaleFontSize(12),
+    marginTop: verticalScale(5),
   },
   postImage: {
     justifyContent: 'center',
-    marginVertical: 20,
+    marginVertical: verticalScale(20),
   },
   postStats: {
     flexDirection: 'row',
-    marginLeft: 10,
+    marginLeft: horizontalScale(10),
     justifyContent: 'space-around',
   },
   postStat: {

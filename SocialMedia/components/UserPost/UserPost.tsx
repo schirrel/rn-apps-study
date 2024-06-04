@@ -10,13 +10,17 @@ import {
   faComment,
   faHeart,
 } from '@fortawesome/free-regular-svg-icons';
+import {horizontalScale} from '../../helpers/scaling';
 
 function UserPost(props: UserPostProps): React.JSX.Element {
   return (
     <View style={style.postWrapper}>
       <View style={style.postContainer}>
         <View style={style.postUserContainer}>
-          <UserProfileImage size={48} profileImage={props.profileImage} />
+          <UserProfileImage
+            size={horizontalScale(48)}
+            profileImage={props.profileImage}
+          />
           <View style={style.userInfo}>
             <Text style={style.userName}>
               {props.firstName} {props.lastName}
