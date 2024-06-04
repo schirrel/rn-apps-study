@@ -7,6 +7,9 @@ const globalStyles = StyleSheet.create({
   flexLayout: {
     flex: 1,
   },
+  grow: {
+    flexGrow: 1,
+  },
 });
 
 export default globalStyles;
