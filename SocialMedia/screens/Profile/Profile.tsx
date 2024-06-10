@@ -6,7 +6,9 @@ import {ScrollView} from 'react-native-gesture-handler';
 import UserProfileImage from '../../components/UserProfileImage/UserProfileImage';
 import {horizontalScale} from '../../helpers/scaling';
 import style from './Style';
+import {ProfileTabsNavigation} from '../../navigation/TabNavigator';
 
+ProfileTabsNavigation;
 export default function Profile() {
   return (
     <SafeAreaView
@@ -36,7 +38,9 @@ export default function Profile() {
             <Text style={style.userStatType}>Posts</Text>
           </View>
         </View>
-        <View style={style.userStatDivider} />
+        <View style={globalStyles.flexLayout}>
+          <ProfileTabsNavigation />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

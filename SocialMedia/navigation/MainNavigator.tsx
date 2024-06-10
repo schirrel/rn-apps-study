@@ -5,7 +5,7 @@ import DrawerNavigation from './DrawerNavigator';
 
 const Stack = createStackNavigator();
 
-function MainNavigation(): React.JSX.Element {
+function MainNavigator(): React.JSX.Element {
   return (
     <Stack.Navigator
       screenOptions={{header: () => null, headerShown: false}}
@@ -15,4 +15,4 @@ function MainNavigation(): React.JSX.Element {
   );
 }
 
-export default MainNavigation;
+export default MainNavigator;

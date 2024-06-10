@@ -7,12 +7,12 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import MainNavigation from './navigation/MainNavigations';
+import MainNavigator from './navigation/MainNavigator';
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <MainNavigation />
+      <MainNavigator />
     </NavigationContainer>
   );
 }
